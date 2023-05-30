@@ -1,0 +1,35 @@
+--Create a pet store database
+
+CREATE TABLE Store (id INTEGER PRIMARY KEY, Item TEXT, Price INTEGER, Section TEXT, Popularity INTEGER);
+ 
+INSERT INTO Store VALUES (1, "Dry Dog Food For Puppies", 5.00, "Food", "10);
+INSERT INTO Store VALUES (2, "Wet Dog Food For Puppies", 7.00, "Food", 9);
+INSERT INTO Store VALUES (3, "Dry Dog For Adult Dogs", 5.00, "Food", 10);
+INSERT INTO Store VALUES (4, "Wet Dog Food For Adult Dogs", 8.00, "Food", 9);
+INSERT INTO Store VALUES (5, "Shampoo", 10.00, "Hygiene", 8);
+INSERT INTO Store VLUES (6, "Conditioner", 12.00, "Hygiene", 8);
+INSERT INTO Store VALUES (7, "Water Bowls", 10.00, "Food", 10);
+INSERT INTO Store VALUES (8, "Food Bowls", 15.00, "Food", 10);
+INSERT INTO Store VALUES (9, "Pet Beds", 25.00, "Miscellanous", 10);
+INSERT INTO Store VALUES (10, "Treats", 5.00, "Food", 9);
+INSERT INTO Store VALUES (11, "Chew Bones", 6.00, "Food", 6);
+INSERT INTO Store VALUES (12, "Trimmers", 20.00, "Hygiene", 9);
+INSERT INTO Store VALUES (13, "Nail Clippers", 10.00, "Hygiene", 8);
+INSERT INTO Store VALUES (14, "Clippers", 23.00, "Hygiene", 9);
+INSERT INTO Store VALUES (15, "Cages", 45.00, "Miscellanous", 10);
+INSERT INTO Store VALUES (16, "Leashes", 15.00, "Miscellanous", 10);
+
+--display the database ordered by price. 
+SELECT * FROM Store
+ORDER BY Price desc;
+
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(Price) "avg hygiene item price" FROM Store
+where section='Hygiene';
+
+--what are the most 5 popular items? 
+SELECT Item, Price, Popularity 
+FROM Store
+ORDER BY Popularity desc
+limit 5;
